@@ -1,21 +1,22 @@
+// ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+// │ Copyright (c) 2021 by the author of the React-weather project. All rights reserved.          │
+// │ This owner-supplied source code has no limitations on the condition imposed on the           │
+// │ maintenance of the copyright notice.                                                         │
+// │ For more information, read the LICENSE file at the root of the project.                      │
+// │ Written by author Rodney Sostras <rodney.sostras@gmail.com>.                                 │
+// └──────────────────────────────────────────────────────────────────────────────────────────────┘
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { store } from './app/store';
 import { Provider } from 'react-redux';
-import * as serviceWorker from './serviceWorker';
+
+import App from '~/pages';
+import { store } from '~/redux/store';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
