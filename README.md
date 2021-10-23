@@ -13,5 +13,5 @@ Um simples aplicativo web em ReactJS que exibe informações sobre o tempo, este
   <img src="https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white" />
   <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" />
   <img src="https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white" />
-  <img src="https://img.shields.io/badge/Prettier-ff69b4.svg?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Prettier-ff69b4?style=for-the-badge&logo=Prettier&logoColor=white" />
 </div>
