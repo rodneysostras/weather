@@ -5,21 +5,18 @@
 // │ For more information, read the LICENSE file at the root of the project.                      │
 // │ Written by author Rodney Sostras <rodney.sostras@gmail.com>.                                 │
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 
-import { GlobalStyle } from './theme';
+import styled from 'styled-components';
 
-import App from '~/pages';
-import { store } from '~/redux/store';
+export const FooterBar = styled.footer`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 100%;
+`;
 
-ReactDOM.render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <GlobalStyle />
-            <App />
-        </Provider>
-    </React.StrictMode>,
-    document.getElementById('root')
-);
+export const Copyright = styled.span`
+    color: var(--text-color);
+    font-weight: 500;
+`;

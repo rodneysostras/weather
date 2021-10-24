@@ -5,21 +5,14 @@
 // │ For more information, read the LICENSE file at the root of the project.                      │
 // │ Written by author Rodney Sostras <rodney.sostras@gmail.com>.                                 │
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 
-import { GlobalStyle } from './theme';
+import * as C from './styled';
 
-import App from '~/pages';
-import { store } from '~/redux/store';
-
-ReactDOM.render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <GlobalStyle />
-            <App />
-        </Provider>
-    </React.StrictMode>,
-    document.getElementById('root')
-);
+export default function SearchBar() {
+    return (
+        <C.Container>
+            <C.IconSearch />
+            <C.TextField type="search" placeholder="Pesquisar cidade" />
+        </C.Container>
+    );
+}
