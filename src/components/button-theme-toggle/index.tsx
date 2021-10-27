@@ -11,5 +11,9 @@ import * as C from './styled';
 import { setTheme } from '~/theme';
 
 export default function ButtonThemeToggle() {
-    return <C.ButtonToggle onClick={() => setTheme()} />;
+    return (
+        <C.ButtonToggle onClick={() => setTheme()}>
+            <C.IconButtonToggle />
+        </C.ButtonToggle>
+    );
 }
