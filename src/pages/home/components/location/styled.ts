@@ -64,7 +64,7 @@ export const ContainerLocation = styled.div`
     justify-content: center;
     gap: 0 5px;
 
-    min-height: 25px;
+    height: 25px;
     width: 100%;
     max-width: 200px;
 

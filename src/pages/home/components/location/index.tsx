@@ -66,16 +66,6 @@ export default function Info() {
         );
     }
 
-    // function Location() {
-    //     return (
-    //         <React.Fragment>
-    //             <p>
-    //                 <C.IconLocation />
-    //                 <strong>{location.name}</strong> {location.country}
-    //             </p>
-    //         </React.Fragment>
-    //     );
-    // }
     return (
         <C.Container>
             <C.ContainerCondition>
