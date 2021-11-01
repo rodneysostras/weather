@@ -1,5 +1,6 @@
 <div align="center">
     <img src="https://img.shields.io/badge/%F0%9F%9A%A7%20EM%20CONTRU%C3%87%C3%83O%20-10%25-brightgreen?style=for-the-badge" />
+    <img src="https://shields.io/github/deployments/rodneysostras/reactjs-weather/production?style=for-the-badge&logo=appveyor" />
 </div>
 
 <br />
