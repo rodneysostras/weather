@@ -15,9 +15,7 @@ export interface IAlert {
 }
 
 export default function Alert({ value }: IAlert) {
-    const [hide, setHide] = React.useState(true);
-
-    React.useMemo(() => setHide(false), [value]);
+    const [hide, setHide] = React.useState(false);
 
     function Popup() {
         setTimeout(() => setHide(true), 2000);
