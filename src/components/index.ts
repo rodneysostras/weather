@@ -6,27 +6,9 @@
 // │ Written by author Rodney Sostras <rodney.sostras@gmail.com>.                                 │
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
 
-import * as C from './styled';
-
-import FooterBar from '~/components/footerbar';
-import HeaderBar from '~/components/headerbar';
-
-export default function App() {
-    return (
-        <C.Container>
-            <HeaderBar />
-            <C.Content>
-                <C.Status>
-                    <C.BackgroundImg />
-                    <C.StatusIconWeather src="https://cdn-icons-png.flaticon.com/512/1542/1542643.png" />
-                    <C.StatusWeather>Thunder</C.StatusWeather>
-                    <C.StatusTemperature>13º</C.StatusTemperature>
-                </C.Status>
-            </C.Content>
-            <FooterBar />
-        </C.Container>
-    );
-}
-
-//https://dribbble.com/shots/15162632-Weather-app
-// https://dribbble.com/shots/1663525-Weather-Widget-freebie-HTML-CSS?list=shots&sort=popular&timeframe=now&offset=121
+export { default as ButtonThemeToggle } from './button-theme-toggle';
+export { default as Footer } from './footer';
+export { default as Header } from './header';
+export { default as Search } from './search';
+export { default as SkeletonLoader } from './skeleton-loader';
+export { default as Alert } from './alert';

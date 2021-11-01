@@ -8,14 +8,10 @@
 
 import * as C from './styled';
 
-import SearchBar from '~/components/searchbar';
-
-export default function HeaderBar() {
+export default function Footer() {
     return (
         <C.Container>
-            <C.Inner>
-                <SearchBar />
-            </C.Inner>
+            <C.Copyright>Copyright © 2021 Rodney Sostras</C.Copyright>
         </C.Container>
     );
 }

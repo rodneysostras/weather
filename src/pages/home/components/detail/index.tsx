@@ -6,15 +6,22 @@
 // │ Written by author Rodney Sostras <rodney.sostras@gmail.com>.                                 │
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
 
+import * as React from 'react';
+
 import * as C from './styled';
 
-export interface ISkeletonLoader {
-    height?: string;
-    width?: string;
-    radius?: string;
-    margin?: string;
-}
+import { SkeletonLoader } from '~/components';
 
-export default function SkeletonLoader(props: ISkeletonLoader) {
-    return <C.Skeleton {...props} />;
+export default function Detail() {
+    return (
+        <C.Container>
+            {Array(3)
+                .fill(0)
+                .map((i) => (
+                    <C.ItemDetail key={i}>
+                        <SkeletonLoader />
+                    </C.ItemDetail>
+                ))}
+        </C.Container>
+    );
 }

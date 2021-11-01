@@ -12,6 +12,7 @@ export interface ISkeletonLoader {
     radius?: string;
     height?: string;
     width?: string;
+    margin?: string;
 }
 
 const loading = keyframes`
@@ -29,6 +30,7 @@ export const Skeleton = styled.span<ISkeletonLoader>`
     width: ${({ width }) => width || '100%'};
     height: ${({ height }) => height || '100%'};
     border-radius: ${({ radius }) => radius || '17px'};
+    margin: ${({ margin }) => margin || '0'};
     overflow: hidden;
 
     background-color: #0000001f;

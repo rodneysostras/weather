@@ -9,16 +9,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import { GlobalStyle } from './theme';
+import ThemeProvider, { GlobalStyle } from './theme';
 
-import App from '~/pages';
-import { store } from '~/redux/store';
+import { store } from '~/hooks/store';
+import Home from '~/pages/home';
 
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
-            <GlobalStyle />
-            <App />
+            <ThemeProvider>
+                <GlobalStyle />
+                <Home />
+            </ThemeProvider>
         </Provider>
     </React.StrictMode>,
     document.getElementById('root')

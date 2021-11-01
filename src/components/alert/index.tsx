@@ -6,15 +6,28 @@
 // │ Written by author Rodney Sostras <rodney.sostras@gmail.com>.                                 │
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
 
+import * as React from 'react';
+
 import * as C from './styled';
 
-export interface ISkeletonLoader {
-    height?: string;
-    width?: string;
-    radius?: string;
-    margin?: string;
+export interface IAlert {
+    value: string;
 }
 
-export default function SkeletonLoader(props: ISkeletonLoader) {
-    return <C.Skeleton {...props} />;
+export default function Alert({ value }: IAlert) {
+    const [hide, setHide] = React.useState(true);
+
+    React.useMemo(() => setHide(false), [value]);
+
+    function Popup() {
+        setTimeout(() => setHide(true), 2000);
+        return (
+            <C.Container>
+                <C.ContentAlert>{value}</C.ContentAlert>
+                {/* <C.CloseAlert>&times;</C.CloseAlert> */}
+            </C.Container>
+        );
+    }
+
+    return <React.Fragment>{hide ? null : <Popup />}</React.Fragment>;
 }

@@ -6,12 +6,14 @@
 // │ Written by author Rodney Sostras <rodney.sostras@gmail.com>.                                 │
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
 
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
+import ImagePuff from '~/assets/img/puff.svg';
 import ImageSearch from '~/assets/img/search.svg';
 
 export const Container = styled.form`
     display: flex;
+    align-items: center;
     height: 40px;
     width: 100%;
     padding: 5px;
@@ -24,24 +26,35 @@ export const Container = styled.form`
 `;
 
 export const TextField = styled.input`
-    flex-grow: 1;
+    flex-grow: 1 1 auto;
     height: 100%;
     width: 100%;
     border: 0;
-    background-color: transparent;
     color: var(--text-color);
+    background-color: transparent;
+    font-weight: bold;
 `;
 
-export const IconSearch = styled.i`
-    padding: 10px;
+const cssIcon = css`
+    height: 30px;
+    width: 30px;
     margin: 0 10px;
-    background: url(${ImageSearch}) no-repeat center;
+
     background-size: contain;
-    filter: invert(0%) sepia(96%) saturate(11%) hue-rotate(115deg) brightness(100%) contrast(100%);
     opacity: 0.3;
 
     .theme-dark & {
         filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%)
             contrast(103%);
     }
+`;
+
+export const IconSearch = styled.i`
+    ${cssIcon}
+    background: url(${ImageSearch}) no-repeat center;
+`;
+
+export const IconLoading = styled.i`
+    ${cssIcon}
+    background: url(${ImagePuff}) no-repeat center;
 `;

@@ -6,17 +6,23 @@
 // │ Written by author Rodney Sostras <rodney.sostras@gmail.com>.                                 │
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
 
-import styled from 'styled-components';
+import * as React from 'react';
 
-export const FooterBar = styled.footer`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 60px;
-    width: 100%;
-`;
+import * as C from './styled';
 
-export const Copyright = styled.span`
-    color: var(--text-color);
-    font-weight: 500;
-`;
+export interface ISearch {
+    onSubmit?: React.FormEventHandler<HTMLFormElement>;
+    onChange?: React.FormEventHandler<HTMLInputElement>;
+    placeholder?: string;
+    value?: string;
+    loading?: boolean;
+}
+
+export default function Search({ onSubmit, loading, ...props }: ISearch) {
+    return (
+        <C.Container onSubmit={onSubmit} autoComplete="off">
+            {loading ? <C.IconLoading /> : <C.IconSearch />}
+            <C.TextField {...props} type="text" name="search" disabled={loading} />
+        </C.Container>
+    );
+}

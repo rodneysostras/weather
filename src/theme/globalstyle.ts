@@ -10,7 +10,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 :root {
-    --bg-body: #fafafa;
+    --bg-body: #f3f3f3;
     --text-color: #000;
 }
 
@@ -27,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 html, body #root {
-    height: 100%;
+    min-height: 100vh;
 }
 
 body {
@@ -38,7 +38,25 @@ body {
     color: var(--text-color);
     background-color: var(--bg-body);
     transition: background 0.2s linear;
-    transition: color 0.2s linear;
+}
+
+#root {
+    display: grid; 
+    grid-template-columns: 100%; 
+    grid-template-rows: 90px 1fr 60px; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer"; 
+    width: 100vw;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
 }
 
 `;

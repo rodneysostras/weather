@@ -6,17 +6,6 @@
 // │ Written by author Rodney Sostras <rodney.sostras@gmail.com>.                                 │
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
 
-import styled from 'styled-components';
+export { useAppDispatch, useAppSelector } from './hooks';
 
-export const Container = styled.header`
-    height: 90px;
-    width: 100%;
-`;
-
-export const Inner = styled.div`
-    display: flex;
-    align-items: center;
-    height: 100%;
-    width: 50%;
-    margin: 0 auto;
-`;
+export * from '~/reducer/weather';

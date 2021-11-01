@@ -6,15 +6,21 @@
 // │ Written by author Rodney Sostras <rodney.sostras@gmail.com>.                                 │
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
 
-import * as C from './styled';
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 
-export interface ISkeletonLoader {
-    height?: string;
-    width?: string;
-    radius?: string;
-    margin?: string;
-}
+import weatherReducer from '~/reducer/weather';
 
-export default function SkeletonLoader(props: ISkeletonLoader) {
-    return <C.Skeleton {...props} />;
-}
+export const store = configureStore({
+    reducer: {
+        weather: weatherReducer,
+    },
+});
+
+export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppThunk<ReturnType = void> = ThunkAction<
+    ReturnType,
+    RootState,
+    unknown,
+    Action<string>
+>;

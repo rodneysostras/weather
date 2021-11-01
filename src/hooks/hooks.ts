@@ -6,13 +6,11 @@
 // │ Written by author Rodney Sostras <rodney.sostras@gmail.com>.                                 │
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
 
-import * as C from './styled';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
-export default function SearchBar() {
-    return (
-        <C.Container>
-            <C.IconSearch />
-            <C.TextField type="search" placeholder="Pesquisar cidade" />
-        </C.Container>
-    );
-}
+import type { AppDispatch, AppThunk, RootState } from './store';
+export type { AppDispatch, AppThunk, RootState };
+
+// Use throughout your app instead of plain `useDispatch` and `useSelector`
+export const useAppDispatch = () => useDispatch<AppDispatch>();
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

@@ -7,8 +7,8 @@
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
 
 export { GlobalStyle } from './globalstyle';
-
-import * as React from 'react';
+import React from 'react';
+import { StyleSheetManager } from 'styled-components';
 
 export function setTheme(theme?: 'theme-dark' | 'theme-light' | undefined) {
     const root = document.documentElement;
@@ -38,5 +38,9 @@ export default function ThemeProvider(props: { children: React.ReactNode }) {
         setTheme('theme-light');
     }
 
-    return <React.Fragment>{props.children}</React.Fragment>;
+    return (
+        <StyleSheetManager disableVendorPrefixes={process.env.NODE_ENV === 'development'}>
+            <React.Fragment>{props.children}</React.Fragment>
+        </StyleSheetManager>
+    );
 }

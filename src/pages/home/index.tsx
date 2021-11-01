@@ -6,15 +6,29 @@
 // │ Written by author Rodney Sostras <rodney.sostras@gmail.com>.                                 │
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
 
+import * as React from 'react';
+
+import Visual from './components/condition';
+import Detail from './components/detail';
+import List from './components/list';
+import Info from './components/location';
 import * as C from './styled';
 
-export interface ISkeletonLoader {
-    height?: string;
-    width?: string;
-    radius?: string;
-    margin?: string;
-}
+import { Header as LayoutHeader, Footer as LayoutFooter } from '~/components';
 
-export default function SkeletonLoader(props: ISkeletonLoader) {
-    return <C.Skeleton {...props} />;
+export default function Home() {
+    return (
+        <React.Fragment>
+            <LayoutHeader />
+            <C.LayoutContainer>
+                <C.MainLayoutContainer>
+                    <Detail />
+                    <Info />
+                    <Visual />
+                </C.MainLayoutContainer>
+                <List />
+            </C.LayoutContainer>
+            <LayoutFooter />
+        </React.Fragment>
+    );
 }

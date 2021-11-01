@@ -6,15 +6,27 @@
 // │ Written by author Rodney Sostras <rodney.sostras@gmail.com>.                                 │
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
 
+import * as React from 'react';
+
 import * as C from './styled';
 
-export interface ISkeletonLoader {
-    height?: string;
-    width?: string;
-    radius?: string;
-    margin?: string;
-}
+import { SkeletonLoader } from '~/components';
+import { selectWeather, useAppSelector } from '~/hooks';
 
-export default function SkeletonLoader(props: ISkeletonLoader) {
-    return <C.Skeleton {...props} />;
+export default function Condition() {
+    const { status, condition } = useAppSelector(selectWeather);
+    return (
+        <C.Container>
+            <C.ContainerCondition>
+                {status.name === 'START' || status.name === 'LOADING' ? (
+                    <SkeletonLoader />
+                ) : (
+                    <C.IconCondition
+                        src={'assets/img/' + condition.icon + '.svg'}
+                        alt={condition.name}
+                    />
+                )}
+            </C.ContainerCondition>
+        </C.Container>
+    );
 }

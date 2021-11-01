@@ -6,12 +6,33 @@
 // │ Written by author Rodney Sostras <rodney.sostras@gmail.com>.                                 │
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
 
-import * as C from './styled';
+import styled from 'styled-components';
 
-export default function FooterBar() {
-    return (
-        <C.FooterBar>
-            <C.Copyright>Copyright © 2021 Rodney Sostras</C.Copyright>
-        </C.FooterBar>
-    );
-}
+export const Container = styled.div`
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 10px;
+    right: 10px;
+
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #ff5252; //red
+    color: #fff;
+
+    box-shadow: 0 0 0 0 rgb(0 0 0 / 20%), 0 0 0 0 rgb(0 0 0 / 14%), 0 0 0 0 rgb(0 0 0 / 12%);
+`;
+
+export const IconAlert = styled.span``;
+
+export const ContentAlert = styled.div`
+    font-weight: bold;
+    line-height: 34px;
+`;
+
+export const CloseAlert = styled.span`
+    margin: 0 10px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+`;

@@ -6,15 +6,22 @@
 // │ Written by author Rodney Sostras <rodney.sostras@gmail.com>.                                 │
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
 
-import * as C from './styled';
+import styled from 'styled-components';
 
-export interface ISkeletonLoader {
-    height?: string;
-    width?: string;
-    radius?: string;
-    margin?: string;
-}
+import { CssContainerCommon } from '../styled-common';
 
-export default function SkeletonLoader(props: ISkeletonLoader) {
-    return <C.Skeleton {...props} />;
-}
+export const Container = styled.section`
+    ${CssContainerCommon}
+`;
+
+export const ContainerCondition = styled.div`
+    height: 200px;
+    width: 200px;
+`;
+
+export const IconCondition = styled.img`
+    height: 100%;
+    width: 100%;
+    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+    -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+`;

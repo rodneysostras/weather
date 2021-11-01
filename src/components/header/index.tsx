@@ -6,15 +6,40 @@
 // │ Written by author Rodney Sostras <rodney.sostras@gmail.com>.                                 │
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
 
+import * as React from 'react';
+
+import Alert from '../alert';
+
 import * as C from './styled';
 
-export interface ISkeletonLoader {
-    height?: string;
-    width?: string;
-    radius?: string;
-    margin?: string;
-}
+import Search from '~/components/search';
+import { useAppDispatch, useAppSelector, setCityWeather, selectWeather } from '~/hooks';
 
-export default function SkeletonLoader(props: ISkeletonLoader) {
-    return <C.Skeleton {...props} />;
+export default function Header() {
+    const [search, setSearch] = React.useState('');
+    const { status } = useAppSelector(selectWeather);
+    const dispatch = useAppDispatch();
+
+    function handlerSearch(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        dispatch(setCityWeather(search)).then(() => {
+            setSearch('');
+        });
+    }
+
+    return (
+        <React.Fragment>
+            <C.Container>
+                <Search
+                    placeholder="Pesquisa a cidade desejada"
+                    onChange={(e) => setSearch(e.currentTarget.value)}
+                    onSubmit={handlerSearch}
+                    value={search}
+                    loading={status.name === 'LOADING'}
+                />
+            </C.Container>
+
+            {status.name === 'FAILED' ? <Alert value={status.message} /> : null}
+        </React.Fragment>
+    );
 }

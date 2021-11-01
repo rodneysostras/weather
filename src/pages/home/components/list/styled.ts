@@ -6,15 +6,16 @@
 // │ Written by author Rodney Sostras <rodney.sostras@gmail.com>.                                 │
 // └──────────────────────────────────────────────────────────────────────────────────────────────┘
 
-import * as C from './styled';
+import styled from 'styled-components';
 
-export interface ISkeletonLoader {
-    height?: string;
-    width?: string;
-    radius?: string;
-    margin?: string;
-}
+export const Container = styled.section`
+    width: 100%;
+    max-width: 700px;
+`;
 
-export default function SkeletonLoader(props: ISkeletonLoader) {
-    return <C.Skeleton {...props} />;
-}
+export const ContainerItemList = styled.div`
+    display: inline-block;
+    height: 150px;
+    width: 80px;
+    margin: 0 10px;
+`;
