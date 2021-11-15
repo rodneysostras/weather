@@ -1,21 +1,23 @@
 {
   "files": {
-    "main.js": "./static/js/main.c1ebaefb.chunk.js",
-    "main.js.map": "./static/js/main.c1ebaefb.chunk.js.map",
+    "main.js": "./static/js/main.9e2efc3d.chunk.js",
+    "main.js.map": "./static/js/main.9e2efc3d.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.8aac8a63.js",
     "runtime-main.js.map": "./static/js/runtime-main.8aac8a63.js.map",
-    "static/js/2.accef7ec.chunk.js": "./static/js/2.accef7ec.chunk.js",
-    "static/js/2.accef7ec.chunk.js.map": "./static/js/2.accef7ec.chunk.js.map",
+    "static/js/2.6b503b46.chunk.js": "./static/js/2.6b503b46.chunk.js",
+    "static/js/2.6b503b46.chunk.js.map": "./static/js/2.6b503b46.chunk.js.map",
     "index.html": "./index.html",
-    "static/js/2.accef7ec.chunk.js.LICENSE.txt": "./static/js/2.accef7ec.chunk.js.LICENSE.txt",
+    "static/js/2.6b503b46.chunk.js.LICENSE.txt": "./static/js/2.6b503b46.chunk.js.LICENSE.txt",
     "static/media/location-pin.2f176113.svg": "./static/media/location-pin.2f176113.svg",
+    "static/media/night-moon.7fa14839.svg": "./static/media/night-moon.7fa14839.svg",
     "static/media/puff.38a93f63.svg": "./static/media/puff.38a93f63.svg",
     "static/media/search.6174e09b.svg": "./static/media/search.6174e09b.svg",
+    "static/media/sun.0688a902.svg": "./static/media/sun.0688a902.svg",
     "static/media/world.2fb590ca.png": "./static/media/world.2fb590ca.png"
   },
   "entrypoints": [
     "static/js/runtime-main.8aac8a63.js",
-    "static/js/2.accef7ec.chunk.js",
-    "static/js/main.c1ebaefb.chunk.js"
+    "static/js/2.6b503b46.chunk.js",
+    "static/js/main.9e2efc3d.chunk.js"
   ]
 }
