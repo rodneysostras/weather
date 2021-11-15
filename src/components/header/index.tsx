@@ -12,7 +12,7 @@ import Alert from '../alert';
 
 import * as C from './styled';
 
-import Search from '~/components/search';
+import { Search, ButtonThemeToggle } from '~/components';
 import { useAppDispatch, useAppSelector, setCityWeather, selectWeather } from '~/hooks';
 
 export default function Header() {
@@ -37,8 +37,10 @@ export default function Header() {
                     value={search}
                     loading={status.name === 'LOADING'}
                 />
+                <C.ContainerToggle>
+                    <ButtonThemeToggle />
+                </C.ContainerToggle>
             </C.Container>
-
             {status.name === 'FAILED' ? <Alert value={status.message} /> : null}
         </React.Fragment>
     );

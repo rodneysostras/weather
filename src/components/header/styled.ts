@@ -17,3 +17,9 @@ export const Container = styled.header`
     width: 100%;
     padding: 0 10vw;
 `;
+
+export const ContainerToggle = styled.div`
+    position: absolute;
+    /* top: 15px; */
+    right: 15px;
+`;

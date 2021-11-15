@@ -74,7 +74,6 @@ export const ContainerLocation = styled.div`
 
 export const IconLocation = styled.i`
     display: inline-block;
-    fill: black;
     height: 20px;
     width: 20px;
     margin: 0;
@@ -84,7 +83,8 @@ export const IconLocation = styled.i`
     background-size: contain;
 
     .theme-dark & {
-        fill: white;
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(37deg) brightness(105%)
+            contrast(104%);
     }
 `;
 

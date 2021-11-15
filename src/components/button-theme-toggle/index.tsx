@@ -12,8 +12,11 @@ import { setTheme } from '~/theme';
 
 export default function ButtonThemeToggle() {
     return (
-        <C.ButtonToggle onClick={() => setTheme()}>
-            <C.IconButtonToggle />
-        </C.ButtonToggle>
+        <C.Wrapper htmlFor="toggle">
+            <C.Slider />
+            <C.IconSun />
+            <C.IconMoon />
+            <C.Toggle id="toggle" name="toggle" type="checkbox" onClick={() => setTheme()} />
+        </C.Wrapper>
     );
 }

@@ -10,6 +10,8 @@ export { GlobalStyle } from './globalstyle';
 import React from 'react';
 import { StyleSheetManager } from 'styled-components';
 
+const isDarkSystem = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
 export function setTheme(theme?: 'theme-dark' | 'theme-light' | undefined) {
     const root = document.documentElement;
 
@@ -21,10 +23,15 @@ export function setTheme(theme?: 'theme-dark' | 'theme-light' | undefined) {
         root.classList.toggle('theme-dark', false);
     }
 
-    localStorage.setItem(
-        'dark-theme-weather-rs',
-        JSON.stringify(root.classList.contains('theme-dark'))
-    );
+    const isSetDark = root.classList.contains('theme-dark');
+
+    if (isSetDark && !isDarkSystem) {
+        localStorage.setItem('dark-theme-weather-rs', 'true');
+    } else if (!isSetDark && isDarkSystem) {
+        localStorage.setItem('dark-theme-weather-rs', 'false');
+    } else {
+        localStorage.removeItem('dark-theme-weather-rs');
+    }
 }
 
 export default function ThemeProvider(props: { children: React.ReactNode }) {
@@ -32,7 +39,7 @@ export default function ThemeProvider(props: { children: React.ReactNode }) {
 
     if (themeStorage !== null && themeStorage === 'true') {
         setTheme('theme-dark');
-    } else if (themeStorage === null && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    } else if (themeStorage === null && isDarkSystem) {
         setTheme('theme-dark');
     } else {
         setTheme('theme-light');
