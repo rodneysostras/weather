@@ -27,10 +27,11 @@ Um simples aplicativo web em ReactJS que exibe informações sobre o tempo, este
 
 <p align="center">
     <a href="#-sobre-o-projeto">Sobre</a> •
-    <a href="#-funcionalidades">Funcionalidades</a> •
+    <a href="#-recursos">Recursos</a> •
     <a href="#-como-executar-o-projeto">Como executar</a> •
     <a href="#-tecnologias">Tecnologias</a> •
     <a href="#-autor">Autor</a> • 
+    <a href="#-creditos">Creditos</a> •
     <a href="#user-content--licença">Licença</a>
 </p>
 
@@ -40,12 +41,12 @@ Um simples aplicativo web em ReactJS que exibe informações sobre o tempo, este
 
 Projeto desenvolvido para praticar minhas habilidades de desenvolvedor com as mais atuais tecnologias do momento.
 
-## ⚙️ Funcionalidades
 
-- [x] Esboço do layout
-- [x] Homologação da API (openweathermap.org)
+## ⚙️ Recursos
+
+- [x] Serviço para consumo da API (openweathermap.org)
     - Cadastro/Geração do token
-    - Criação do serviço para abstração do fluxo de informação
+    - Criação da lib para abstração do fluxo de informação
 - [ ] Pesquisar da localidade
     - [x] Input pelo usuário
     - [ ] Automatização por geolocalização do navegador
@@ -80,6 +81,7 @@ $ npm run start
 # A aplicação será aberta na porta:3000 - acesse http://localhost:3000
 ```
 
+
 ## 🛠 Tecnologias
 
 #### **Website** ([React](https://reactjs.org/)  +  [TypeScript](https://www.typescriptlang.org/))
@@ -112,6 +114,13 @@ $ npm run start
 </div>
 <br/>
 
+        
+## 🎨 Creditos
+
+- Como inspiração usei o design que encontrei no dribbble do artista [Amjad - Weather App](https://dribbble.com/shots/15162632).
+- Os icons utilizei do artista [Bas - Weather icons](https://bas.dev/projects/weather-icons)
+
+        
 ## 📝 Licença
 
 Este projeto esta sobe a licença [MIT](./LICENSE).
