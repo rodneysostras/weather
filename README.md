@@ -97,7 +97,7 @@ $ npm run start
 
 ## 🦸 Autor
 <div align="center">
-    <a href="rodneysostras.me" >
+    <a href="https://rodneysostras.me" >
         <img src="https://github.com/rodneysostras.png" alt="Rodney Sostras" width="100px"/>
         <br />
         <sub><b>Rodney Sostras<b></sub>
